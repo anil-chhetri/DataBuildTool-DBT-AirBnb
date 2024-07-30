@@ -20,3 +20,20 @@ installing harlequin to query and connect duckdb.
 ```shell
     pipx install harlequin
 ```
+
+
+reading data from s3 buckets to duckdb.
+```sql
+create schema raw
+```
+
+```sql
+CREATE TABLE dev.raw.raw_listing AS
+    FROM read_csv('s3://dbtlearn/listings.csv');
+
+CREATE TABLE dev.raw.raw_review AS
+    FROM read_csv('s3://dbtlearn/reviews.csv');
+
+CREATE TABLE dev.raw.raw_host AS
+    FROM read_csv('s3://dbtlearn/hosts.csv');
+```
