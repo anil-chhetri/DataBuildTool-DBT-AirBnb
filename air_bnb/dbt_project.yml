@@ -2,11 +2,11 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_dbt_project'
+name: 'air_bnb'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'dbt-test'
+profile: 'air_bnb'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -30,7 +30,25 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  my_dbt_project:
+  air_bnb:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+    
+    staging_layer:
+      +materialized: ephemeral
+
+    dim:
+      +schema: dim
+      +materialized: view
+
+    fact:
+      +schema: fact
+      +materialized: table
+
+    mart:
+      +schema: mart
+      +materialized: table
+
+seeds:
+  +schema: 'ref'
