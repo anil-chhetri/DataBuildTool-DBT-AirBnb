@@ -1,10 +1,13 @@
-name: dbt
+name: dbt-test
 channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.12
+  - python=3.11
   - conda-forge::duckdb-cli
-  - dbt-core
-  - dbt-duckdb
   - conda-forge::harlequin
+  - pip
+  - pip:
+    - dbt-core
+    - dbt-duckdb
+

@@ -1,4 +1,4 @@
-.open './my_dbt_project/dev-env.duckdb'
+.open './air_bnb/development_db.duckdb'
 INSTALL httpfs;
 LOAD httpfs;
 SET s3_region='us-west-2';

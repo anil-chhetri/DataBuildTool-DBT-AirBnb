@@ -1,0 +1,10 @@
+air_bnb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: './development_db.duckdb'
+      schema: 'test'
+      extensions:
+        - httpfs
+        - parquet
