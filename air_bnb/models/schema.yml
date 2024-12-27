@@ -1,12 +1,15 @@
 models: 
   - name: dim_listings_cleansed
+    description: cleansed table which contains AirBnb listings.
     columns: 
       - name: listing_id
+        description: primary key of the listing
         data_tests: 
           - unique
           - not_null
 
       - name: host_id
+        description: Reference id from dim host cleansed table. act as a foreign key to the table.
         data_tests: 
           - not_null
           - relationships: 
@@ -19,5 +22,7 @@ models:
               values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
 
       - name: minimum_nights
+        description: >
+          '{{ doc('dim_listing_cleansed__minimum_nights') }}'
         data_tests: 
           - positive_value
