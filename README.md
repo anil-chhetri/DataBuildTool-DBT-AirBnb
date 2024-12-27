@@ -5,7 +5,11 @@ trying out different feature of dbt and compiling it into a project.
 command used for creating environment in github. 
 
 ```shell
-conda create -n dbt-test python=3.12
+conda create -n dbt-test python=3.11
+```
+
+```shell
+conda install conda-forge::duckdb-cli
 ```
 
 installing dbt core and duckdb.
@@ -28,12 +32,12 @@ create schema raw
 ```
 
 ```sql
-CREATE TABLE dev.raw.raw_listing AS
+CREATE TABLE raw.raw_listing AS
     FROM read_csv('s3://dbtlearn/listings.csv');
 
-CREATE TABLE dev.raw.raw_review AS
+CREATE TABLE raw.raw_review AS
     FROM read_csv('s3://dbtlearn/reviews.csv');
 
-CREATE TABLE dev.raw.raw_host AS
+CREATE TABLE raw.raw_host AS
     FROM read_csv('s3://dbtlearn/hosts.csv');
 ```

@@ -2,7 +2,7 @@ dbt-test:
   outputs:
     dev:
       type: duckdb
-      path: dev.duckdb
+      path: dev-env.duckdb
       schema: dev
       threads: 4
 
