@@ -10,7 +10,6 @@ sources:
         loaded_at_field: created_at
         freshness:
           warn_after: {count: 1, period: hour}
-          error_after: {count: 23, period: hour}
 
       - name: reviews
         identifier: raw_review
