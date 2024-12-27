@@ -1,0 +1,10 @@
+#for duckdb
+*.duckdb*
+*.wal
+*.tmp/
+
+# for dbt project
+target/
+dbt_packages/
+logs/
+dbt_modules/
