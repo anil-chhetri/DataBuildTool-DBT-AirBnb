@@ -34,3 +34,21 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+    
+    staging_layer:
+      +materialized: ephemeral
+
+    dim:
+      +schema: dim
+      +materialized: view
+
+    fact:
+      +schema: fact
+      +materialized: table
+
+    mart:
+      +schema: mart
+      +materialized: table
+
+seeds:
+  +schema: 'ref'
