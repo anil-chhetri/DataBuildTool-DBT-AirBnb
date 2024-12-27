@@ -1,0 +1,10 @@
+name: dbt
+channels:
+  - defaults
+dependencies:
+  - conda-forge::duckdb-cli
+  - conda-forge::harlequin
+  - dbt-core
+  - dbt-duckdb
+  - python=3.11
+prefix: /opt/conda/envs/dbt
